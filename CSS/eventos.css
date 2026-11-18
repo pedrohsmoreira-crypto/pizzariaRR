@@ -1,0 +1,457 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2b1b12;
+    background-color: #fff8ef;
+    line-height: 1.5;
+}
+
+/* Etapa 2: títulos (agrupamento) */
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #9b1c1c;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 1.75rem;
+    /* celular; cresce nas media queries */
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid #2f6f3e;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+/* Etapa 3: box model e imagens */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Etapa 4: layout da página com áreas (Grid)
+   O link "pular" é o único <a> filho direto do <body>. */
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "pular"
+        "topo"
+        "conteudo"
+        "rodape";
+}
+
+body>a {
+    grid-area: pular;
+}
+
+header {
+    grid-area: topo;
+}
+
+main {
+    grid-area: conteudo;
+}
+
+footer {
+    grid-area: rodape;
+}
+
+/* Link "Pular para o conteúdo": escondido até receber foco do teclado */
+body>a {
+    height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    background-color: #2b1b12;
+    color: #ffffff;
+}
+
+body>a:focus-visible {
+    height: auto;
+    padding: 0.75rem 1rem;
+}
+
+/* Etapa 5: cabeçalho (Grid por fora, Flexbox por dentro) */
+header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "titulo"
+        "menu";
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-bottom: 4px solid #9b1c1c;
+}
+
+header h1 {
+    grid-area: titulo;
+}
+
+header nav {
+    grid-area: menu;
+}
+
+/* Menus: o seletor "header nav a" não afeta o menu do rodapé */
+header nav ul,
+footer nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav li {
+    flex-grow: 1;
+    /* no celular, cada link preenche a linha */
+}
+
+header nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    /* área de toque de 44px */
+    padding: 0 1rem;
+    border: 1px solid #ead9c3;
+    border-radius: 6px;
+    color: #9b1c1c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    background-color: #fbe9e4;
+}
+
+/* Etapa 6: conteúdo principal
+   O <main> é um Grid: as seções empilham numa coluna e, no desktop,
+   o <aside> (que fica dentro do <main>) vai para uma segunda coluna. */
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+main section,
+aside {
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #ead9c3;
+    border-radius: 8px;
+}
+
+main section p {
+    max-width: 70ch;
+    /* linha de texto confortável em telas largas */
+}
+
+main section img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    color: #6b4f3f;
+    font-size: 0.875rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Links dentro do texto */
+main a {
+    color: #9b1c1c;
+}
+
+main a:hover {
+    color: #7f1d1d;
+}
+
+/* Seção de abertura (escolhida pelo atributo aria-labelledby) */
+section[aria-labelledby="titulo-pagina"] img {
+    width: 100%;
+    max-width: 480px;
+}
+
+/* Etapa 7: cards dos eventos (Grid + Flexbox)
+   O Grid fica na própria seção "Próximos eventos": o título ocupa
+   a linha inteira (1 / -1) e cada <article> vira um card. */
+section[aria-labelledby="titulo-agenda"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+section[aria-labelledby="titulo-agenda"] h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #fffaf3;
+    border: 1px solid #ead9c3;
+    border-left: 4px solid #9b1c1c;
+    border-radius: 8px;
+}
+
+article p {
+    margin: 0;
+}
+
+article h3 {
+    margin: 0;
+    color: #2f6f3e;
+    /* article h3 é mais específico que "h1, h2, h3" */
+}
+
+article time {
+    font-weight: bold;
+}
+
+article p:last-child {
+    margin-top: auto;
+    /* empurra o botão para o fim do card */
+    padding-top: 0.5rem;
+}
+
+/* Etapa 8: botão "Reservar mesa" / "Garantir vaga"
+   (o link dentro do último parágrafo do card) */
+article p:last-child a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #9b1c1c;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+article p:last-child a:hover {
+    background-color: #7f1d1d;
+    color: #ffffff;
+}
+
+/* Etapa 9: festas e confraternizações (listas) */
+main ul,
+main ol {
+    padding-left: 1.5rem;
+}
+
+main li {
+    margin-bottom: 0.25rem;
+}
+
+main li::marker {
+    color: #9b1c1c;
+    font-weight: bold;
+}
+
+/* Etapa 10: informações úteis (aside) */
+aside {
+    container-type: inline-size;
+    /* a lista olha o tamanho do aside, não da tela */
+}
+
+aside h2 {
+    font-size: 1.25rem;
+}
+
+aside ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+aside li {
+    margin: 0;
+    padding-left: 0.75rem;
+    border-left: 4px solid #2f6f3e;
+}
+
+/* Etapa 11: rodapé */
+footer {
+    padding: 1.5rem 1rem;
+    background-color: #2b1b12;
+    color: #f5e9dc;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 0 0.5rem;
+}
+
+footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: #ffd9a8;
+}
+
+footer nav ul {
+    justify-content: center;
+    column-gap: 1.5rem;
+}
+
+/* Etapa 12: pseudo-classes e pseudo-elementos (foco e seleção) */
+a:focus-visible {
+    outline: 3px solid #2f6f3e;
+    outline-offset: 2px;
+}
+
+footer a:focus-visible,
+body>a:focus-visible {
+    outline-color: #ffffff;
+    /* o verde não tem contraste no fundo escuro */
+}
+
+::selection {
+    background-color: #f9d9b8;
+    color: #2b1b12;
+}
+
+/* ==========================================================
+   Container query: a lista do aside ganha 3 colunas sempre que
+   o aside tiver 500px ou mais (abaixo do conteúdo, em telas médias)
+   e volta a 1 coluna quando ele vira a lateral estreita.
+   ========================================================== */
+@container (min-width: 500px) {
+    aside ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================================
+   Media queries (mobile first: ficam no fim do arquivo)
+   ========================================================== */
+
+/* 600px ou mais: tablet */
+@media (min-width: 600px) {
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    header nav li {
+        flex-grow: 0;
+        /* menu numa linha só, sem esticar */
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    main {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    main section,
+    aside {
+        padding: 1.5rem;
+    }
+
+    /* Abertura em duas colunas: texto à esquerda, foto à direita */
+    section[aria-labelledby="titulo-pagina"] {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
+        column-gap: 1.5rem;
+        align-items: start;
+    }
+
+    section[aria-labelledby="titulo-pagina"] h2,
+    section[aria-labelledby="titulo-pagina"] p {
+        grid-column: 1;
+    }
+
+    section[aria-labelledby="titulo-pagina"] p {
+        margin-top: 0;
+        /* margens não colapsam dentro do Grid */
+    }
+
+    section[aria-labelledby="titulo-pagina"] figure {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+}
+
+/* 900px ou mais: desktop (o aside vira a lateral dentro do <main>) */
+@media (min-width: 900px) {
+    header {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "titulo menu";
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+
+    header nav ul {
+        justify-content: flex-end;
+    }
+
+    main {
+        grid-template-columns: minmax(0, 1fr) 280px;
+        align-items: start;
+    }
+
+    main section {
+        grid-column: 1;
+        /* seções na coluna do conteúdo */
+    }
+
+    aside {
+        grid-column: 2;
+        /* aside na coluna lateral... */
+        grid-row: 1 / span 3;
+        /* ...ao lado das três seções */
+        padding: 1.25rem;
+    }
+}

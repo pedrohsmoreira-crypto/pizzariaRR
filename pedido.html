@@ -1,142 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/Pedido.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/Pedido.css" />
 </head>
 
 <body>
-    <header id="inicio">
-        <a href="#conteudo">Pular para o conteúdo principal</a>
-        <h1>Irmãos Rômulo e Remo Pizzaria</h1>
-        <p>Culinária genuinamente italiana 🤌 idealizada, pensada e executada por irmãos genuinamente italianos 🤌</p>
+  <header id="inicio">
+    <a href="#conteudo">Pular para o conteúdo principal</a>
+    <h1>Irmãos Rômulo e Remo Pizzaria</h1>
+    <p>
+      Culinária genuinamente italiana 🤌 idealizada, pensada e executada por
+      irmãos genuinamente italianos 🤌
+    </p>
 
-        <nav aria-label="Navegação principal">
-            <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="cardapio.html" aria-current="page">Cardápio</a></li>
-                <li><a href="eventos.html" aria-current="page">Eventos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="cardapio.html" aria-current="page">Cardápio</a></li>
+        <li><a href="eventos.html" aria-current="page">Eventos</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main id="conteudo">
+  <main id="conteudo">
+    <section id="areaInicial" aria-labelledby="imagem-principal">
+      <h2 id="imagem-principal">
+        Faça já seu pedido online, reserve sua mesa ou agende seu evento!
+      </h2>
+      <img src="Imagens/Pedido/pedido-online.jpg" alt="Cliente realizando um pedido de pizza, imagem ilustrativa"
+        width="300" height="230" />
+    </section>
 
-        <section aria-labelledby="imagem-principal">
-            <h2 id="imagem-principal">Faça já seu pedido online, reserve sua mesa ou agende seu evento!</h2>
-            <img src="Imagens/Pedido/pedido-online.jpg" alt="Cliente realizando um pedido de pizza, imagem ilustrativa"
-                width="300" height="230">
-        </section>
+    <section>
+      <h2 id="tipoPedido">Selecione abaixo a forma do seu pedido:</h2>
 
-        <section>
-            <h2 id="tipoPedido">Selecione abaixo a forma do seu pedido:</h2>
+      <select>
+        <option>Selecione:</option>
+        <option>Agendar evento</option>
+        <option>Pedido online</option>
+        <option>Reserva de horário</option>
+      </select>
 
+      <div id="formularios">
+        <article id="agendarEvento" class="formulario">
+          <h3>Agendamento de Evento:</h3>
+          <form>
+            <label>Digite seu nome: </label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" />
+            <br />
+            <label>Digite um telefone para contato: </label>
+            <input type="text" id="telefone" name="telefone" placeholder="Seu telefone" />
+            <br />
+            <label>Descreva para o que será o evento(Festa de aniversário,
+              casamento, celebração religiosa):
+            </label>
+            <br />
+            <textarea id="descricao" name="descricao" rowls="10" cols="35" placeholder="Descreva seu evento"></textarea>
+            <br />
+            <label>Selecione a data do evento: </label>
+            <input type="date" id="nome" name="nome" placeholder="Data (01/12/2005)" />
+            <br />
+            <label>Restrições no cardápio?</label>
+            <br />
+            <textarea id="restricoes" name="restricoes" rowls="10" cols="35" placeholder="Restrições"></textarea>
+            <br />
+            <button>Cadastrar pedido</button>
+            <p>Telefone para contato direto: 1234-5678</p>
+          </form>
+        </article>
+
+        <article id="pedidoOnline" class="formulario">
+          <h3>Pedido Online:</h3>
+          <form>
+            <label>Digite seu nome: </label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" />
+            <br />
+            <label>Digite um telefone para contato: </label>
+            <input type="text" id="telefone" name="telefone" placeholder="Seu telefone" />
+            <br />
+            <label>Selecione o sabor da pizza: </label>
             <select>
-                <option>Selecione:</option>
-                <option>Agendar evento</option>
-                <option>Pedido online</option>
-                <option>Reserva de horário</option>
+              <option>Selecione:</option>
+              <option>Pizza de Calabresa</option>
+              <option>Pizza de Muçarela</option>
+              <option>Pizza de Frango com Catupiry</option>
+              <option>Pizza Quatro Queijos</option>
+              <option>Pizza Portuguesa</option>
+              <option>Pizza de Chocolate</option>
+              <option>Pizza de Banana com Canela</option>
             </select>
+            <br />
+            <label>Digite o endereço de entrega: </label>
+            <input type="text" id="entrega" name="entrega" placeholder="Seu endereço" />
+            <br />
+            <button>Cadastrar pedido</button>
+          </form>
+        </article>
 
-            <article id="agendarEvento">
-                <h3>Agendamento de Evento:</h3>
-                <form>
-                    <label>Digite seu nome: </label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
-                    <br>
-                    <label>Digite um telefone para contato: </label>
-                    <input type="text" id="telefone" name="telefone" placeholder="Seu telefone">
-                    <br>
-                    <label>Descreva para o que será o evento(Festa de aniversário, casamento, celebração religiosa):
-                    </label>
-                    <br>
-                    <textarea id="descricao" name="descricao" rowls="10" cols="35"
-                        placeholder="Descreva seu evento"></textarea>
-                    <br>
-                    <label>Selecione a data do evento: </label>
-                    <input type="date" id="nome" name="nome" placeholder="Data (01/12/2005)">
-                    <br>
-                    <label>Restrições no cardápio?</label>
-                    <br>
-                    <textarea id="restricoes" name="restricoes" rowls="10" cols="35"
-                        placeholder="Restrições"></textarea>
-                    <br>
-                    <button>Cadastrar pedido</button>
-                    <p>Telefone para contato direto: 1234-5678</p>
+        <article id="reserva" class="formulario">
+          <h3>Reserva de Horário:</h3>
+          <form>
+            <label>Digite seu nome: </label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" />
+            <br />
+            <label>Digite um telefone para contato: </label>
+            <input type="text" id="telefone" name="telefone" placeholder="Seu telefone" />
+            <br />
+            <label>Selecione a data da reserva: </label>
+            <input type="date" id="nome" name="nome" placeholder="Data (01/12/2005)" />
+            <br />
+            <label>Selecione o horário da reserva: </label>
+            <input type="text" id="horario" name="horario" placeholder="Ex: 20:00" />
+            <br />
+            <label>Restrições no cardápio?</label>
+            <br />
+            <textarea id="restricoes" name="restricoes" rowls="10" cols="35" placeholder="Restrições"></textarea>
+            <br />
+            <button>Cadastrar reserva</button>
+            <p>Telefone para contato direto: 1234-5678</p>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
 
-                </form>
-            </article>
-
-            <article id="pedidoOnline">
-                <h3>Pedido Online:</h3>
-                <form>
-                    <label>Digite seu nome: </label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
-                    <br>
-                    <label>Digite um telefone para contato: </label>
-                    <input type="text" id="telefone" name="telefone" placeholder="Seu telefone">
-                    <br>
-                    <label>Selecione o sabor da pizza:
-                    </label>
-                    <select>
-                        <option>Selecione:</option>
-                        <option>Pizza de Calabresa</option>
-                        <option>Pizza de Muçarela</option>
-                        <option>Pizza de Frango com Catupiry</option>
-                        <option>Pizza Quatro Queijos</option>
-                        <option>Pizza Portuguesa</option>
-                        <option>Pizza de Chocolate</option>
-                        <option>Pizza de Banana com Canela</option>
-                    </select>
-                    <br>
-                    <label>Digite o endereço de entrega: </label>
-                    <input type="text" id="entrega" name="entrega" placeholder="Seu endereço">
-                    <br>
-                    <button>Cadastrar pedido</button>
-
-                </form>
-            </article>
-
-            <article id="reserva">
-                <h3>Reserva de Horário:</h3>
-                <form>
-                    <label>Digite seu nome: </label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome">
-                    <br>
-                    <label>Digite um telefone para contato: </label>
-                    <input type="text" id="telefone" name="telefone" placeholder="Seu telefone">
-                    <br>
-                    <label>Selecione a data da reserva: </label>
-                    <input type="date" id="nome" name="nome" placeholder="Data (01/12/2005)">
-                    <br>
-                    <label>Selecione o horário da reserva: </label>
-                    <input type="text" id="horario" name="horario" placeholder="Ex: 20:00">
-                    <br>
-                    <label>Restrições no cardápio?</label>
-                    <br>
-                    <textarea id="restricoes" name="restricoes" rowls="10" cols="35"
-                        placeholder="Restrições"></textarea>
-                    <br>
-                    <button>Cadastrar reserva</button>
-                    <p>Telefone para contato direto: 1234-5678</p>
-
-                </form>
-            </article>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <p>
-            &copy; 2026 R&R Pizzaria.
-            Última atualização: 5 de Novembro de 2026.
-        </p>
-
-    </footer>
+  <footer>
+    <p>
+      &copy; 2026 R&R Pizzaria. Última atualização: 5 de Novembro de 2026.
+    </p>
+  </footer>
 </body>
 
 </html>

@@ -1,32 +1,67 @@
-body{
-	text-align: center;
+body {
+  text-align: center;
+  background-color: rgb(229, 80, 21);
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "areaInicial"
+    "formularios"
+    "agendarEvento"
+    "pedidoOnline"
+    "reserva";
+}
+
+#inicio {
+  width: auto;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#areaInicial {
+  grid-area: "areaInicial";
+  background-color: rgb(215, 184, 7);
+  width: 50rem;
+  margin: auto auto;
+  padding: 0 auto;
+  display: flexbox;
+}
+
+
+#formularios {
+  grid-area: "formularios";
+  background-color: rgb(7, 166, 215);
+  width: auto;
+  height: auto;
+  display: flexbox;
+  align-content: start;
+  justify-content: center;
 
 }
 
-#inicio{
-	width: auto;
-	display: flex;
-  	align-items: center;
-	margin: 0;
+.formulario {
+  width: 25rem;
+  padding: 0 auto;
+  display: grid;
+  align-content: start;
+}
+
+#agendarEvento {
+  grid-area: "agendarEvento";
+  background-color: rgb(225, 103, 10);
 
 }
 
-#pedidoOnline{
-
+#pedidoOnline {
+  grid-area: "pedidoOnline";
+  background-color: rgb(181, 211, 8);
 }
 
-#agendarEvento{
-
+#reserva {
+  grid-area: "reserva";
+  background-color: rgb(163, 25, 10);
 }
 
-#reserva{
+label {}
 
-}
-
-label{
-
-}
-
-input{
-
-}
+input {}
