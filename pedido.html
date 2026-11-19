@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="CSS/Pedido.css" />
+  <link rel="stylesheet" href="CSS/pedido.css" />
 </head>
 
 <body>
   <header id="inicio">
-    <a href="#conteudo">Pular para o conteúdo principal</a>
     <h1>Irmãos Rômulo e Remo Pizzaria</h1>
     <p>
       Culinária genuinamente italiana 🤌 idealizada, pensada e executada por
@@ -35,15 +34,6 @@
     </section>
 
     <section>
-      <h2 id="tipoPedido">Selecione abaixo a forma do seu pedido:</h2>
-
-      <select>
-        <option>Selecione:</option>
-        <option>Agendar evento</option>
-        <option>Pedido online</option>
-        <option>Reserva de horário</option>
-      </select>
-
       <div id="formularios">
         <article id="agendarEvento" class="formulario">
           <h3>Agendamento de Evento:</h3>
@@ -67,7 +57,9 @@
             <br />
             <textarea id="restricoes" name="restricoes" rowls="10" cols="35" placeholder="Restrições"></textarea>
             <br />
+            <a href="pedido-cadastrado.html">
             <button>Cadastrar pedido</button>
+            </a>
             <p>Telefone para contato direto: 1234-5678</p>
           </form>
         </article>
@@ -96,7 +88,9 @@
             <label>Digite o endereço de entrega: </label>
             <input type="text" id="entrega" name="entrega" placeholder="Seu endereço" />
             <br />
+            <a href="pedido-cadastrado.html">
             <button>Cadastrar pedido</button>
+            </a>
           </form>
         </article>
 
@@ -119,7 +113,8 @@
             <br />
             <textarea id="restricoes" name="restricoes" rowls="10" cols="35" placeholder="Restrições"></textarea>
             <br />
-            <button>Cadastrar reserva</button>
+            <a href="pedido-cadastrado.html">
+            <button>Cadastrar reserva</button></a>
             <p>Telefone para contato direto: 1234-5678</p>
           </form>
         </article>
