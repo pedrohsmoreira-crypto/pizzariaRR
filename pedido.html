@@ -46,10 +46,10 @@
           <h3>Agendamento de Evento:</h3>
           <form>
             <label>Digite seu nome: </label>
-            <input type="text" id="nome-evento" name="nome-evento" placeholder="Seu nome">
+            <input required type="text" id="nome-evento" name="nome-evento" placeholder="Seu nome">
             <br>
             <label>Digite um telefone para contato: </label>
-            <input type="text" id="telefone-evento" name="telefone-evento" placeholder="Seu telefone">
+            <input required type="text" id="telefone-evento" name="telefone-evento" placeholder="Seu telefone">
             <br>
             <label>Descreva para o que será o evento(Festa de aniversário,
               casamento, celebração religiosa):
@@ -58,7 +58,7 @@
             <textarea id="descricao" name="descricao-evento" cols="35" placeholder="Descreva seu evento"></textarea>
             <br>
             <label>Selecione a data do evento: </label>
-            <input type="date" id="data-evento" name="data-evento">
+            <input required type="date" id="data-evento" name="data-evento">
             <br>
             <label>Restrições no cardápio?</label>
             <br>
@@ -73,10 +73,10 @@
           <h3>Pedido Online:</h3>
           <form>
             <label>Digite seu nome: </label>
-            <input type="text" id="nome-pedido" name="nome-pedido" placeholder="Seu nome">
+            <input required type="text" id="nome-pedido" name="nome-pedido" placeholder="Seu nome">
             <br>
             <label>Digite um telefone para contato: </label>
-            <input type="text" id="telefone-pedido" name="telefone-pedido" placeholder="Seu telefone">
+            <input required type="text" id="telefone-pedido" name="telefone-pedido" placeholder="Seu telefone">
             <br>
             <label>Selecione o sabor da pizza: </label>
             <select>
@@ -91,7 +91,7 @@
             </select>
             <br>
             <label>Digite o endereço de entrega: </label>
-            <input type="text" id="entrega-pedido" name="entrega-pedido" placeholder="Seu endereço">
+            <input required type="text" id="entrega-pedido" name="entrega-pedido" placeholder="Seu endereço">
             <br>
             <button>Cadastrar pedido</button>
             <p>Telefone para contato direto: 1234-5678</p>
@@ -102,16 +102,16 @@
           <h3>Reserva de Horário:</h3>
           <form>
             <label>Digite seu nome: </label>
-            <input type="text" id="nome-reserva" name="nome-reserva" placeholder="Seu nome">
+            <input required type="text" id="nome-reserva" name="nome-reserva" placeholder="Seu nome">
             <br>
             <label>Digite um telefone para contato: </label>
-            <input type="text" id="telefone-reserva" name="telefone-reserva" placeholder="Seu telefone">
+            <input required type="text" id="telefone-reserva" name="telefone-reserva" placeholder="Seu telefone">
             <br>
             <label>Selecione a data da reserva: </label>
-            <input type="date" id="data-reserva" name="data-reserva">
+            <input required type="date" id="data-reserva" name="data-reserva">
             <br>
             <label>Selecione o horário da reserva: </label>
-            <input type="text" id="horario-reserva" name="horario-reserva" placeholder="Ex: 20:00">
+            <input required type="text" id="horario-reserva" name="horario-reserva" placeholder="Ex: 20:00">
             <br>
             <label>Restrições no cardápio?</label>
             <br>

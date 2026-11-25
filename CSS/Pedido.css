@@ -145,6 +145,11 @@ select {
   text-align: center;
 }
 
+input:user-invalid{
+  border-color: #e9500a;
+  background-color: #7b1313d9;
+}
+
 button:hover {
   background-color: #b91c1c;
   border-color: #b91c1c;
